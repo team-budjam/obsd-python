@@ -7,19 +7,8 @@ from typing import Optional, Dict, Any
 class IOSDetector:
     """Detect iOS devices from user agent strings and provide device information."""
     
-    # iOS device models mapping
-    DEVICE_MODELS = {
-        "iPhone": ["iPhone"],
-        "iPad": ["iPad"],
-        "iPod": ["iPod"],
-    }
-    
     # iOS user agent patterns
     IOS_PATTERN = re.compile(r'(?:iPhone|iPad|iPod)(?:.*?)(?:OS |; )?(\d+)[_.](\d+)(?:[_.](\d+))?')
-    
-    def __init__(self):
-        """Initialize the iOS detector."""
-        pass
     
     @staticmethod
     def is_ios(user_agent: str) -> bool:

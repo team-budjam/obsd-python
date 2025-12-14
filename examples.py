@@ -19,17 +19,15 @@ def main():
         ("Android", "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.120 Mobile Safari/537.36"),
     ]
     
-    detector = IOSDetector()
-    
     for name, ua in user_agents:
         print(f"\n{name}:")
         print(f"  User Agent: {ua[:80]}...")
         
-        info = detector.parse_user_agent(ua)
+        info = IOSDetector.parse_user_agent(ua)
         print(f"  Is iOS: {info['is_ios']}")
         print(f"  Device Type: {info['device_type']}")
         print(f"  iOS Version: {info['ios_version']}")
-        print(f"  Is Safari: {detector.is_safari(ua)}")
+        print(f"  Is Safari: {IOSDetector.is_safari(ua)}")
     
     print("\n" + "=" * 60)
     print("iOS Version Comparison Examples")
